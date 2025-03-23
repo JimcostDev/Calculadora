@@ -1,61 +1,71 @@
-* {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
+/* Estilo general para centrar y dar fondo */
 body {
-	font-family: Arial, Sans-serif;
-	background: #5eb9f5;
-	color: #cf5c36;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* Contenedor de la calculadora */
 .contenedor {
-	width: 300px;
-	margin: 20px auto;
-	background: #eee5e9;
-	padding: 20px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para el título h2 */
+.contenedor h2 {
+	margin-bottom: 1rem;
+	color: #333;
+	font-size: 1.8rem;
+  }
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para inputs y select */
+form input, form select {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Inputs de texto centrados y con ancho fijo */
+form input[type="text"] {
+    width: 80px;
+    text-align: center;
+}
+
+/* Estilo para el signo igual */
 form p {
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 30px;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-form select{
-	width: 100%;
-	margin-bottom: 20px;
-	padding: 20px;
-	text-align: center;
-	color: goldenrod;
-	font-size: 1rem;
+/* Botón de resultado */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-form select option {
-	color: gray;
-}
-
-input[type="text"]{
-	width: 100%;
-	margin-bottom: 20px;
-	padding: 20px;
-	text-align: center;
-	font-size: 1rem;
-	color:#bbb;
-}
-
-form .btn {
-	width: 100%;
-	background: #cf5c36;
-	color: #fff;
-	border:none;
-	cursor: pointer;
-	font-size: 16px;
-	text-align: center;
-	padding: 20px;
-	display: inline-block;
-	text-decoration: none;
+.btn:hover {
+    background-color: #45a049;
 }

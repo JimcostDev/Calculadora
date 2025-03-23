@@ -1,73 +1,54 @@
-function getOperacion(){
-	operacion = document.getElementById('operacion').value;
-	return operacion;
+// Funciones para cada operación
+function sumar(a, b) {
+    return a + b;
 }
 
-function getNumeroUno(){
-	x = parseFloat(document.getElementById('numero1').value);
-	return x;
+function restar(a, b) {
+    return a - b;
 }
 
-function getNumeroDos(){
-	y = parseFloat(document.getElementById('numero2').value);
-	return y;
+function multiplicar(a, b) {
+    return a * b;
 }
 
-function ejecutarOperacion(){
-	if (getOperacion() == 'suma'){
-		console.log('entre-suma')
-		suma();
-	} else if (getOperacion() == 'resta'){
-		console.log('entre-resta')
-		resta();
-	} else if (getOperacion() == 'division'){
-		console.log('entre-division')
-		division();
-	} else if (getOperacion() == 'multiplicacion'){
-		console.log('entre-multiplicacion')
-		multiplicacion();
-	} else {
-		alert ('No elegiste una operación correcta');
-	}
-
-
-	function suma(x, y){
-		var x = getNumeroUno();
-		var y = getNumeroDos();
-		var resultado = x + y;
-		console.log(resultado);
-		document.getElementById('resultado').value = resultado;
-	}
-
-	function resta(x, y){
-		var x = getNumeroUno();
-		var y = getNumeroDos();
-		var resultado = x - y;
-		console.log(resultado);
-		document.getElementById('resultado').value = resultado;
-	}
-	
-	function division(x, y){
-		var x = getNumeroUno();
-		var y = getNumeroDos();
-		var resultado;
-		if (y == 0){
-			resultado = 'No se puede dividir entre cero';
-		}else{
-			resultado = x / y;
-			console.log(resultado);
-		}
-		document.getElementById('resultado').value = resultado;
-	}
-	
-	function multiplicacion(x, y){
-		var x = getNumeroUno();
-		var y = getNumeroDos();
-		var resultado = x * y;
-		console.log(resultado);
-		document.getElementById('resultado').value = resultado;
-	}
+function dividir(a, b) {
+    if (b === 0) {
+        alert("No se puede dividir por cero");
+        return "";
+    }
+    return a / b;
 }
 
+// Función principal para ejecutar la operación seleccionada
+function calculadora() {
+    const num1 = parseFloat(document.getElementById("numero1").value);
+    const num2 = parseFloat(document.getElementById("numero2").value);
+    const operacion = document.getElementById("operacion").value;
+    let resultado;
 
+    if (isNaN(num1) || isNaN(num2)) {
+        alert("Por favor, ingresa números válidos.");
+        return;
+    }
 
+    // Ejecutar la operación basada en la selección
+    switch (operacion) {
+        case "suma":
+            resultado = sumar(num1, num2);
+            break;
+        case "resta":
+            resultado = restar(num1, num2);
+            break;
+        case "multiplicacion":
+            resultado = multiplicar(num1, num2);
+            break;
+        case "division":
+            resultado = dividir(num1, num2);
+            break;
+        default:
+            alert("Operación no válida");
+            return;
+    }
+
+    document.getElementById("resultado").value = resultado;
+}
